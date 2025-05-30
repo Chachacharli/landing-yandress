@@ -1,0 +1,14 @@
+---
+interface Props {
+  location: string;
+  title: string;
+}
+
+const { location, title } = Astro.props;
+---
+
+<a
+  href={location}
+  class="text-black text-sm hover:text-[#d00151] transition-all cursor-pointer"
+  ><span>{title}</span></a
+>
