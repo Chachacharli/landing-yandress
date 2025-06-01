@@ -9,6 +9,12 @@ const { location, title } = Astro.props;
 
 <a
   href={location}
-  class="text-black text-sm hover:text-[#d00151] transition-all cursor-pointer"
-  ><span>{title}</span></a
+  class="group text-black font-semibold hover:text-primary-700 transition-all cursor-pointer relative"
 >
+  <span class="relative">
+    {title}
+    <span
+      class="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-primary-700 transition-all duration-300 group-hover:w-full"
+    ></span>
+  </span>
+</a>

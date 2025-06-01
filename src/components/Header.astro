@@ -1,25 +1,85 @@
----
-import LinkNavbar from "@componentsnavbar/LinkNavbar.astro";
----
-
 <nav
-  id="main-header"
-  class="absolute top-0 left-0 w-full z-50 bg-white/5 shadow-md transition-all duration-300 ease-in-out"
+  id="navbar"
+  class="bg-transparent text-primary-900 fixed top-0 w-full z-50 transition-all duration-300 ease-in-out"
 >
-  <div
-    class="flex justify-between items-center p-4 bg-transparent container mx-auto"
-  >
-    <div class="logo">Logo</div>
-    <div class="flex space-x-5 items-center">
-      <LinkNavbar title="Sobre nosotros" location="#" />
-      <!-- <LinkNavbar text={'Servicios'} href={"#"}> -->
-      <!-- <LinkNavbar text={'Contacto'} href={"#"}> -->
-      <!-- <LinkNavbar text={'Galería'} href={"#"}>    -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="text-xl font-bold">Mi Sitio</div>
       <button
-        class="text-white bg-purple-600 hover:bg-purple-700 transition-all duration-300 ease-out active:scale-95 focus:ring-4 focus:ring-purple-500 font-medium rounded-md focus:outline-hidden px-2.5 py-1.5 text-sm cursor-pointer"
+        class="md:hidden bg-primary-800 rounded px-3 py-2 text-white hover:text-primary-900 transition-all duration-300 ease-out active:scale-95 focus:ring-4 focus:ring-primary-500"
+        id="menu-toggle"
+        aria-label="Toggle menu"
       >
-        Agenda tu cita
+        ☰
       </button>
+      <ul class="hidden md:flex gap-6 text-sm font-medium">
+        <li>
+          <a href="#" class="hover:text-primary-600 transition">Inicio</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-600 transition">Acerca</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-600 transition">Servicios</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-600 transition">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MENÚ MÓVIL -->
+  <div
+    id="mobile-menu"
+    class="absolute top-16 left-0 w-full max-h-0 overflow-hidden transition-all duration-300 ease-in-out z-40"
+  >
+    <div class="flex justify-center w-full p-3">
+      <ul
+        class="flex rounded shadow-lg w-[90%] flex-col gap-4 p-4 font-medium bg-white text-gray-700"
+      >
+        <li class="py-2 px-1 w-full">
+          <a href="#" class="hover:text-primary-700 transition w-full">Agenda tu cita</a>
+        </li>
+        <li class="py-2 px-1 w-full">
+          <a href="#" class="hover:text-primary-700 transition w-full">Contáctanos</a>
+        </li>
+        <li class="py-2 px-1 w-full">
+          <a href="#" class="hover:text-primary-700 transition w-full">Galería</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+
+<script type="module">
+  const toggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navbar = document.getElementById("navbar");
+
+  let open = false;
+
+  const handleScroll = () => {
+    if (window.scrollY > 250) {
+      navbar?.classList.add("bg-white", "shadow-md");
+      navbar?.classList.remove("bg-transparent");
+    } else {
+      navbar?.classList.remove("bg-white", "shadow-md");
+      navbar?.classList.add("bg-transparent");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  toggle?.addEventListener("click", () => {
+    open = !open;
+    mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + "px" : "0";
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      mobileMenu.style.maxHeight = "0";
+      open = false;
+    }
+  });
+</script>

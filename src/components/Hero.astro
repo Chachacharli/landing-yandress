@@ -1,12 +1,36 @@
 ---
-import Header from "@components/Header.astro"
----
-
-<section id="hero" class="relative">
-    <Header />
-    <img src="/public/landing.jpg" alt="Landing Image" class="w-full h-auto object-cover" />
-    <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-bold text-center">
-        Bienvenido a nuestro sitio web
-    </h2>
-
-</section>
+--- 
+<section class="relative w-full h-[80vh] md:h-[90vh] flex items-center justify-center text-white">
+    <!-- Imagen de fondo -->
+    <img
+      src="/public/landing.jpg"
+      alt="Modelo con ropa de ensueño"
+      class="absolute inset-0 w-full h-full object-cover object-center z-0"
+      loading="lazy"
+    />
+  
+    <!-- Capa oscura opcional -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+  
+    <!-- Contenido centrado -->
+    <div class="relative z-20 text-center px-6 max-w-2xl">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+        Vístete como en tus sueños
+      </h1>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#agenda"
+          class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded transition duration-300 ease-in-out active:scale-95 focus:ring-4 focus:ring-primary-300"
+        >
+          Agenda tu cita
+        </a>
+        <a
+          href="#contacto"
+          class="bg-white text-primary-800 hover:bg-primary-100 font-semibold py-3 px-6 rounded transition duration-300 ease-in-out active:scale-95 focus:ring-4 focus:ring-primary-200"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </section>
+  
