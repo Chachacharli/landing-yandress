@@ -1,25 +1,31 @@
 @import "tailwindcss";
 
-  * {
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
-  }
-  
+* {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
 
-  .burger-line {
-    @apply absolute block w-6 h-0.5 bg-primary-900 transition-all duration-300 ease-in-out;
-  }
+@font-face {
+  font-family: "RougeScript";
+  src: url("/src/assets/fonts/Rouge_Script/RougeScript-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
 
 @theme {
---color-primary: #d00151;
---color-primary-50: #fff0f8;
---color-primary-100: #ffe4f2;
---color-primary-200: #ffc9e7;
---color-primary-300: #ff9dd2;
---color-primary-400: #ff60b2;
---color-primary-500: #ff3193;
---color-primary-600: #f40e6d;
---color-primary-700: #d00151;
---color-primary-800: #b00444;
---color-primary-900: #92093c;
---color-primary-950: #5a001f;
+  --color-primary: #d00151;
+  --color-primary-50: #fff0f8;
+  --color-primary-100: #ffe4f2;
+  --color-primary-200: #ffc9e7;
+  --color-primary-300: #ff9dd2;
+  --color-primary-400: #ff60b2;
+  --color-primary-500: #ff3193;
+  --color-primary-600: #f40e6d;
+  --color-primary-700: #d00151;
+  --color-primary-800: #b00444;
+  --color-primary-900: #92093c;
+  --color-primary-950: #5a001f;
+  --font-rouge-script: "RougeScript", cursive;
 }

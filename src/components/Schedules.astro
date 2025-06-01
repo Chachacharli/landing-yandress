@@ -1,0 +1,30 @@
+---
+import MapPin from "src/assets/icons/map-pin.astro";
+---
+
+<section class="bg-zinc-800 py-10">
+  <div class="flex flex-col items-center space-y-4 text-white">
+    <div class="flex flex-col items-center" role="group">
+      <span class="font-bold text-2xl">Lunes a Viernes</span>
+      <span>12:00 AM - 8:00 PM</span>
+    </div>
+    <div class="flex flex-col items-center" role="group">
+      <span class="font-bold text-2xl">Sábando</span>
+      <span>12:00 AM - 3:00 PM</span>
+    </div>
+    <div>
+      <a
+        class="flex space-x-1 bg-primary-800 text-white px-4 py-1 rounded font-semibold text-lg"
+        href="https://maps.app.goo.gl/dDkKquB7oyyFhM7z5"
+        target="_blank"
+        >
+        <span>
+            Visitanos
+        </span>
+        <span class="text-sm">
+            <MapPin />
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
